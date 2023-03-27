@@ -18,9 +18,15 @@
     <ClCompile Include="Lab31.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Lab33.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Lab31.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Lab33.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>

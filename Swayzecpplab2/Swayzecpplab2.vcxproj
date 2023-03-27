@@ -120,9 +120,13 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Lab31.cpp" />
+    <ClCompile Include="Lab33.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Lab31.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Lab33.h">
       <FileType>CppForm</FileType>
     </ClInclude>
   </ItemGroup>
