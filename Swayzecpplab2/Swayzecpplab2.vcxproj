@@ -119,12 +119,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Lab3.1.cpp" />
+    <ClCompile Include="Lab31.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Lab3.1.h">
+    <ClInclude Include="Lab31.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Lab31.1.resx">
+      <DependentUpon>Lab31.h</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,0 +1,6 @@
+﻿  Lab31.cpp
+C:\Users\Dell\Documents\GitHub\Swayzecpplab2\Swayzecpplab2\Lab31.h(226,20): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\Dell\Documents\GitHub\Swayzecpplab2\Swayzecpplab2\Lab31.h(227,20): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\Dell\Documents\GitHub\Swayzecpplab2\Swayzecpplab2\Lab31.h(228,20): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  Lab31.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
+  Swayzecpplab2.vcxproj -> C:\Users\Dell\Documents\GitHub\Swayzecpplab2\x64\Debug\Swayzecpplab2.exe

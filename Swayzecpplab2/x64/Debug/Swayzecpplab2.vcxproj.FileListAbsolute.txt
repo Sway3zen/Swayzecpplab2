@@ -1,0 +1,4 @@
+C:\Users\Dell\Documents\GitHub\Swayzecpplab2\Swayzecpplab2\x64\Debug\Swayzecpplab2.vcxproj.AssemblyReference.cache
+C:\Users\Dell\Documents\GitHub\Swayzecpplab2\Swayzecpplab2\x64\Debug\Swayzecpplab2.vcxproj.SuggestedBindingRedirects.cache
+C:\Users\Dell\Documents\GitHub\Swayzecpplab2\Swayzecpplab2\x64\Debug\Swayzecpplab2.Lab31.1.resources
+C:\Users\Dell\Documents\GitHub\Swayzecpplab2\Swayzecpplab2\x64\Debug\Swayzecpplab2.vcxproj.GenerateResource.cache
