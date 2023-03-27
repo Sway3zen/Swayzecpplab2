@@ -137,6 +137,9 @@
     <EmbeddedResource Include="Lab31.resx">
       <DependentUpon>Lab31.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Lab33.resx">
+      <DependentUpon>Lab33.h</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
