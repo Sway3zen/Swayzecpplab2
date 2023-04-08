@@ -1,3 +1,6 @@
+#include <stdio.h>
+#include <Windows.h>
+
 #pragma once
 
 namespace Lab41 {

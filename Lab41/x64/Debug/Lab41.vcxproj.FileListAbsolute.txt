@@ -1,0 +1,5 @@
+C:\Users\Swayze\Source\Repos\Swayzecpplab2\x64\Debug\Ijwhost.dll
+C:\Users\Swayze\Source\Repos\Swayzecpplab2\x64\Debug\Lab41.deps.json
+C:\Users\Swayze\Source\Repos\Swayzecpplab2\x64\Debug\Lab41.runtimeconfig.json
+C:\Users\Swayze\source\repos\Swayzecpplab2\Lab41\x64\Debug\Lab41.vcxproj.AssemblyReference.cache
+C:\Users\Swayze\source\repos\Swayzecpplab2\Lab41\x64\Debug\Lab41.genruntimeconfig.cache
