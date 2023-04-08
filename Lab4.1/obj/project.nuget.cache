@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "bouzhC8jlYMAKTVNywSY1xdWaznhYeoE/hefP5bvf55SewoKaywsNidPL+z1fnIwl9m2jLi2SlHW2V0VtLUQNg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Swayze\\source\\repos\\Swayzecpplab2\\Lab4.1\\Lab4.1.vcxproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Swayze\\.nuget\\packages\\microsoft.windows.sdk.net.ref\\10.0.22621.28\\microsoft.windows.sdk.net.ref.10.0.22621.28.nupkg.sha512"
+  ],
+  "logs": []
+}
