@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <Windows.h>
+#include <Commdlg.h>
 
 #pragma once
 
@@ -50,6 +51,8 @@ namespace Swayzecpplab2 {
 
 	public: char *path;
 	private: System::Windows::Forms::SaveFileDialog^ saveFileDialog1;
+	public:
+
 	public:
 
 
@@ -186,15 +189,23 @@ namespace Swayzecpplab2 {
 		System::Drawing::Font^ selectedFont = fontDialog1->Font;
 		textBox1->Font = gcnew System::Drawing::Font(selectedFont->FontFamily, 16, selectedFont->Style);
 	}
+
 	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
 		SaveFileDialog^ savefile = gcnew SaveFileDialog();
-		savefile->Filter = "Text Files (*.txt)|*.txt|All Files (*.*)|*.*";
-		savefile->FilterIndex = 1;
-		savefile->Title = "Save a Text File";
-		savefile->RestoreDirectory = true;
-		if (savefile->ShowDialog() == System::Windows::Forms::DialogResult::OK) {
-			String^ selectedFile = savefile->FileName;
-		}
+	 savefile->Filter = "Text Files (*.txt)|*.txt|All Files (*.*)|*.*";
+	 savefile->FilterIndex = 1;
+	 savefile->Title = "Save a Text File";
+	 savefile->RestoreDirectory = true;
+	 if (savefile->ShowDialog() == System::Windows::Forms::DialogResult::OK) {
+		 String^ selectedFile = savefile->FileName;
+	 }
+
+		/*SaveFileDialog^ saveFileDialog1 = gcnew SaveFileDialog();
+		saveFileDialog1->Filter = "TEXT|*.txt";
+		saveFileDialog1->Title = "Save a File";
+		saveFileDialog1->ShowDialog();*/
+
 	}
+		
 };
 }
