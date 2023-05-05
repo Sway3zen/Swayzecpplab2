@@ -1,0 +1,7 @@
+C:\Users\Swayze\source\repos\Swayzecpplab2\Swayzecpplab2\x64\Release\Swayzecpplab2.vcxproj.AssemblyReference.cache
+C:\Users\Swayze\source\repos\Swayzecpplab2\Swayzecpplab2\x64\Release\Swayzecpplab2.vcxproj.SuggestedBindingRedirects.cache
+C:\Users\Swayze\source\repos\Swayzecpplab2\Swayzecpplab2\x64\Release\Swayzecpplab2.Lab31.1.resources
+C:\Users\Swayze\source\repos\Swayzecpplab2\Swayzecpplab2\x64\Release\Swayzecpplab2.Lab31.resources
+C:\Users\Swayze\source\repos\Swayzecpplab2\Swayzecpplab2\x64\Release\Swayzecpplab2.Lab33.resources
+C:\Users\Swayze\source\repos\Swayzecpplab2\Swayzecpplab2\x64\Release\Swayzecpplab2.Lab41.resources
+C:\Users\Swayze\source\repos\Swayzecpplab2\Swayzecpplab2\x64\Release\Swayzecpplab2.vcxproj.GenerateResource.cache

@@ -123,20 +123,20 @@ namespace Swayzecpplab2 {
 			// çáåğåãòèToolStripMenuItem
 			// 
 			this->çáåğåãòèToolStripMenuItem->Name = L"çáåğåãòèToolStripMenuItem";
-			this->çáåğåãòèToolStripMenuItem->Size = System::Drawing::Size(180, 22);
+			this->çáåğåãòèToolStripMenuItem->Size = System::Drawing::Size(139, 22);
 			this->çáåğåãòèToolStripMenuItem->Text = L"Çáåğåãòè";
 			this->çáåğåãòèToolStripMenuItem->Click += gcnew System::EventHandler(this, &Lab41::çáåğåãòèToolStripMenuItem_Click);
 			// 
 			// çáåğåãòèßêToolStripMenuItem
 			// 
 			this->çáåğåãòèßêToolStripMenuItem->Name = L"çáåğåãòèßêToolStripMenuItem";
-			this->çáåğåãòèßêToolStripMenuItem->Size = System::Drawing::Size(180, 22);
+			this->çáåğåãòèßêToolStripMenuItem->Size = System::Drawing::Size(139, 22);
 			this->çáåğåãòèßêToolStripMenuItem->Text = L"Çáåğåãòè ÿê";
 			// 
 			// â³äêğèòèToolStripMenuItem
 			// 
 			this->â³äêğèòèToolStripMenuItem->Name = L"â³äêğèòèToolStripMenuItem";
-			this->â³äêğèòèToolStripMenuItem->Size = System::Drawing::Size(180, 22);
+			this->â³äêğèòèToolStripMenuItem->Size = System::Drawing::Size(139, 22);
 			this->â³äêğèòèToolStripMenuItem->Text = L"Â³äêğèòè";
 			this->â³äêğèòèToolStripMenuItem->Click += gcnew System::EventHandler(this, &Lab41::â³äêğèòèToolStripMenuItem_Click);
 			// 
@@ -222,12 +222,16 @@ private: System::Void çáåğåãòèToolStripMenuItem_Click(System::Object^ sender, Sy
 	{
 		richTextBox1->SaveFile(saveFileDialog1->FileName, RichTextBoxStreamType::PlainText);
 	}
+
 }
 private: System::Void â³äêğèòèToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 	if (openFileDialog1->ShowDialog() == System::Windows::Forms::DialogResult::OK)
 	{
 		richTextBox1->LoadFile(openFileDialog1->FileName,
 			RichTextBoxStreamType::PlainText);
+	}
+	else {
+		MessageBox::Show("À õóé çíàº ÷îãî.");
 	}
 
 }
