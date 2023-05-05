@@ -122,6 +122,8 @@
     <ClCompile Include="Lab31.cpp" />
     <ClCompile Include="Lab33.cpp" />
     <ClCompile Include="Lab41.cpp" />
+    <ClCompile Include="Lab42.cpp" />
+    <ClCompile Include="MyForm.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Lab31.h">
@@ -131,6 +133,12 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Lab41.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Lab42.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
   </ItemGroup>
@@ -146,6 +154,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Lab41.resx">
       <DependentUpon>Lab41.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lab42.resx">
+      <DependentUpon>Lab42.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForm.resx">
+      <DependentUpon>MyForm.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
