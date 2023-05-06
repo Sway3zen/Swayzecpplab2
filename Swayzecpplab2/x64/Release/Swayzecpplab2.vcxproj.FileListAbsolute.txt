@@ -7,3 +7,4 @@ C:\Users\Swayze\source\repos\Swayzecpplab2\Swayzecpplab2\x64\Release\Swayzecppla
 C:\Users\Swayze\source\repos\Swayzecpplab2\Swayzecpplab2\x64\Release\Swayzecpplab2.vcxproj.GenerateResource.cache
 C:\Users\Swayze\source\repos\Swayzecpplab2\Swayzecpplab2\x64\Release\Swayzecpplab2.MyForm.resources
 C:\Users\Swayze\source\repos\Swayzecpplab2\Swayzecpplab2\x64\Release\Swayzecpplab2.Lab42.resources
+C:\Users\Swayze\source\repos\Swayzecpplab2\Swayzecpplab2\x64\Release\Swayzecpplab2.Lab5.resources
