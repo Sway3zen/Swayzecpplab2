@@ -381,7 +381,7 @@ namespace Swayzecpplab2 {
 		}
 		if (radioButton3->Checked)
 		{
-			MyGraphic->DrawRectangle(MyPen, x1, y1, e->X - x1, e->X - x1); CreateNode(1, x1, y1, e->X - x1, e->X - x1);
+			MyGraphic->DrawRectangle(MyPen, x1, y1, e->X - x1, e->X - abs(x1)); CreateNode(1, x1, y1, e->X - x1, e->X - x1);
 		}
 		if (radioButton4->Checked)
 		{
