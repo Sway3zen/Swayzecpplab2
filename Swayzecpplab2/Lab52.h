@@ -44,6 +44,10 @@ namespace Swayzecpplab2 {
 	private: System::Windows::Forms::ToolStripMenuItem^ redoToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^ changeColorToolStripMenuItem;
 	private: System::Windows::Forms::RadioButton^ radioButton3;
+	private: System::Windows::Forms::RadioButton^ radioButton4;
+	private: System::Windows::Forms::RadioButton^ radioButton5;
+	private: System::Windows::Forms::RadioButton^ radioButton6;
+	private: System::Windows::Forms::ColorDialog^ colorDialog1;
 	private:
 		System::ComponentModel::Container^ components;
 #pragma region Windows Form Designer generated code
@@ -64,17 +68,22 @@ namespace Swayzecpplab2 {
 			this->changeColorToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->saveFileDialog1 = (gcnew System::Windows::Forms::SaveFileDialog());
 			this->radioButton3 = (gcnew System::Windows::Forms::RadioButton());
+			this->radioButton4 = (gcnew System::Windows::Forms::RadioButton());
+			this->radioButton5 = (gcnew System::Windows::Forms::RadioButton());
+			this->radioButton6 = (gcnew System::Windows::Forms::RadioButton());
+			this->colorDialog1 = (gcnew System::Windows::Forms::ColorDialog());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->menuStrip1->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// pictureBox1
 			// 
+			this->pictureBox1->BackColor = System::Drawing::Color::White;
 			this->pictureBox1->Dock = System::Windows::Forms::DockStyle::Right;
-			this->pictureBox1->Location = System::Drawing::Point(87, 24);
+			this->pictureBox1->Location = System::Drawing::Point(107, 24);
 			this->pictureBox1->Margin = System::Windows::Forms::Padding(2);
 			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(619, 466);
+			this->pictureBox1->Size = System::Drawing::Size(677, 537);
 			this->pictureBox1->TabIndex = 0;
 			this->pictureBox1->TabStop = false;
 			this->pictureBox1->MouseDown += gcnew System::Windows::Forms::MouseEventHandler(this, &Lab52::pictureBox1_MouseDown_1);
@@ -83,8 +92,9 @@ namespace Swayzecpplab2 {
 			// radioButton1
 			// 
 			this->radioButton1->AutoSize = true;
-			this->radioButton1->BackColor = System::Drawing::Color::White;
+			this->radioButton1->BackColor = System::Drawing::Color::Transparent;
 			this->radioButton1->Checked = true;
+			this->radioButton1->ForeColor = System::Drawing::Color::White;
 			this->radioButton1->Location = System::Drawing::Point(9, 26);
 			this->radioButton1->Margin = System::Windows::Forms::Padding(2);
 			this->radioButton1->Name = L"radioButton1";
@@ -97,7 +107,8 @@ namespace Swayzecpplab2 {
 			// radioButton2
 			// 
 			this->radioButton2->AutoSize = true;
-			this->radioButton2->BackColor = System::Drawing::Color::White;
+			this->radioButton2->BackColor = System::Drawing::Color::Transparent;
+			this->radioButton2->ForeColor = System::Drawing::Color::White;
 			this->radioButton2->Location = System::Drawing::Point(9, 56);
 			this->radioButton2->Margin = System::Windows::Forms::Padding(2);
 			this->radioButton2->Name = L"radioButton2";
@@ -108,17 +119,24 @@ namespace Swayzecpplab2 {
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(9, 460);
+			this->button1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->button1->AutoSize = true;
+			this->button1->BackColor = System::Drawing::Color::White;
+			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button1->Location = System::Drawing::Point(9, 515);
 			this->button1->Margin = System::Windows::Forms::Padding(2);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(56, 19);
+			this->button1->Size = System::Drawing::Size(83, 35);
 			this->button1->TabIndex = 3;
 			this->button1->Text = L"Clear";
-			this->button1->UseVisualStyleBackColor = true;
+			this->button1->UseVisualStyleBackColor = false;
 			this->button1->Click += gcnew System::EventHandler(this, &Lab52::button1_Click);
 			// 
 			// menuStrip1
 			// 
+			this->menuStrip1->BackColor = System::Drawing::Color::White;
 			this->menuStrip1->ImageScalingSize = System::Drawing::Size(20, 20);
 			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(2) {
 				this->fileToolStripMenuItem,
@@ -127,7 +145,7 @@ namespace Swayzecpplab2 {
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);
 			this->menuStrip1->Name = L"menuStrip1";
 			this->menuStrip1->Padding = System::Windows::Forms::Padding(4, 2, 0, 2);
-			this->menuStrip1->Size = System::Drawing::Size(706, 24);
+			this->menuStrip1->Size = System::Drawing::Size(784, 24);
 			this->menuStrip1->TabIndex = 4;
 			this->menuStrip1->Text = L"menuStrip1";
 			this->menuStrip1->ItemClicked += gcnew System::Windows::Forms::ToolStripItemClickedEventHandler(this, &Lab52::menuStrip1_ItemClicked);
@@ -175,38 +193,85 @@ namespace Swayzecpplab2 {
 			// endoToolStripMenuItem
 			// 
 			this->endoToolStripMenuItem->Name = L"endoToolStripMenuItem";
-			this->endoToolStripMenuItem->Size = System::Drawing::Size(145, 22);
-			this->endoToolStripMenuItem->Text = L"Endo";
+			this->endoToolStripMenuItem->Size = System::Drawing::Size(180, 22);
+			this->endoToolStripMenuItem->Text = L"Undo";
+			this->endoToolStripMenuItem->Click += gcnew System::EventHandler(this, &Lab52::endoToolStripMenuItem_Click);
 			// 
 			// redoToolStripMenuItem
 			// 
 			this->redoToolStripMenuItem->Name = L"redoToolStripMenuItem";
-			this->redoToolStripMenuItem->Size = System::Drawing::Size(145, 22);
+			this->redoToolStripMenuItem->Size = System::Drawing::Size(180, 22);
 			this->redoToolStripMenuItem->Text = L"Redo";
 			// 
 			// changeColorToolStripMenuItem
 			// 
 			this->changeColorToolStripMenuItem->Name = L"changeColorToolStripMenuItem";
-			this->changeColorToolStripMenuItem->Size = System::Drawing::Size(145, 22);
+			this->changeColorToolStripMenuItem->Size = System::Drawing::Size(180, 22);
 			this->changeColorToolStripMenuItem->Text = L"Change color";
+			this->changeColorToolStripMenuItem->Click += gcnew System::EventHandler(this, &Lab52::changeColorToolStripMenuItem_Click);
 			// 
 			// radioButton3
 			// 
 			this->radioButton3->AutoSize = true;
-			this->radioButton3->BackColor = System::Drawing::Color::White;
+			this->radioButton3->BackColor = System::Drawing::Color::Transparent;
+			this->radioButton3->ForeColor = System::Drawing::Color::White;
 			this->radioButton3->Location = System::Drawing::Point(9, 86);
 			this->radioButton3->Margin = System::Windows::Forms::Padding(2);
 			this->radioButton3->Name = L"radioButton3";
-			this->radioButton3->Size = System::Drawing::Size(45, 17);
+			this->radioButton3->Size = System::Drawing::Size(59, 17);
 			this->radioButton3->TabIndex = 5;
-			this->radioButton3->Text = L"Line";
+			this->radioButton3->Text = L"Square";
 			this->radioButton3->UseVisualStyleBackColor = false;
+			// 
+			// radioButton4
+			// 
+			this->radioButton4->AutoSize = true;
+			this->radioButton4->BackColor = System::Drawing::Color::Transparent;
+			this->radioButton4->ForeColor = System::Drawing::Color::White;
+			this->radioButton4->Location = System::Drawing::Point(9, 118);
+			this->radioButton4->Margin = System::Windows::Forms::Padding(2);
+			this->radioButton4->Name = L"radioButton4";
+			this->radioButton4->Size = System::Drawing::Size(63, 17);
+			this->radioButton4->TabIndex = 6;
+			this->radioButton4->Text = L"Triangle";
+			this->radioButton4->UseVisualStyleBackColor = false;
+			// 
+			// radioButton5
+			// 
+			this->radioButton5->AutoSize = true;
+			this->radioButton5->BackColor = System::Drawing::Color::Transparent;
+			this->radioButton5->ForeColor = System::Drawing::Color::White;
+			this->radioButton5->Location = System::Drawing::Point(9, 151);
+			this->radioButton5->Margin = System::Windows::Forms::Padding(2);
+			this->radioButton5->Name = L"radioButton5";
+			this->radioButton5->Size = System::Drawing::Size(74, 17);
+			this->radioButton5->TabIndex = 7;
+			this->radioButton5->Text = L"Rectangle";
+			this->radioButton5->UseVisualStyleBackColor = false;
+			// 
+			// radioButton6
+			// 
+			this->radioButton6->AutoSize = true;
+			this->radioButton6->BackColor = System::Drawing::Color::Transparent;
+			this->radioButton6->ForeColor = System::Drawing::Color::White;
+			this->radioButton6->Location = System::Drawing::Point(9, 184);
+			this->radioButton6->Margin = System::Windows::Forms::Padding(2);
+			this->radioButton6->Name = L"radioButton6";
+			this->radioButton6->Size = System::Drawing::Size(51, 17);
+			this->radioButton6->TabIndex = 8;
+			this->radioButton6->Text = L"Circle";
+			this->radioButton6->UseVisualStyleBackColor = false;
 			// 
 			// Lab52
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(706, 490);
+			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(30)),
+				static_cast<System::Int32>(static_cast<System::Byte>(40)));
+			this->ClientSize = System::Drawing::Size(784, 561);
+			this->Controls->Add(this->radioButton6);
+			this->Controls->Add(this->radioButton5);
+			this->Controls->Add(this->radioButton4);
 			this->Controls->Add(this->radioButton3);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->radioButton2);
@@ -237,6 +302,9 @@ namespace Swayzecpplab2 {
 		TextBox^ textBox2;
 		Form^ form1;
 		Drawing_list* head = NULL;
+
+		System::Drawing::Color color = Color::Black;
+
 		void CreateNode(int figure, int x1, int y1, int x2, int y2)
 		{
 			if (head == NULL)
@@ -311,6 +379,27 @@ namespace Swayzecpplab2 {
 			MyGraphic->DrawEllipse(MyPen, x1, y1, e->X - x1, e->Y -
 				y1); CreateNode(1, x1, y1, e->X - x1, e->Y - y1);
 		}
+		if (radioButton3->Checked)
+		{
+			MyGraphic->DrawRectangle(MyPen, x1, y1, e->X - x1, e->X - x1); CreateNode(1, x1, y1, e->X - x1, e->X - x1);
+		}
+		if (radioButton4->Checked)
+		{
+			array<Point>^ points = { Point(x1,e->Y), Point(e->X, e->Y), Point((x1 + e->X) / 2,y1) };
+			MyGraphic->DrawPolygon(MyPen, points);
+		}
+		if (radioButton5->Checked)
+		{
+			MyGraphic->DrawRectangle(MyPen, x1, y1, e->X - x1, e->Y - y1); 
+			CreateNode(1, x1, y1, e->X - x1, e->Y - y1);
+		}
+
+		if (radioButton6->Checked)
+		{
+			MyGraphic->DrawEllipse(MyPen, x1, y1, e->X - x1, e->X -
+				x1); CreateNode(1, x1, y1, e->X - x1, e->X - x1);
+		}
+
 		pictureBox1->Invalidate();
 	}
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -319,12 +408,12 @@ namespace Swayzecpplab2 {
 		pictureBox1->Invalidate();
 	}
 	private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
-		MyPen = gcnew Pen(Color::Black);
-		this->BackColor = System::Drawing::Color::LightGray;
-		height = 500;
-		width = 1000;
+		MyPen = gcnew Pen(color);
+		//this->BackColor = System::Drawing::Color::LightGray;
+		height = 600;
+		width = 800;
 		bmp = gcnew System::Drawing::Bitmap(width, height);
-		pictureBox1->Width = width;
+		pictureBox1->Width = width-120;
 		pictureBox1->Height = height;
 		pictureBox1->Image = bmp;
 		MyGraphic = System::Drawing::Graphics::FromImage(pictureBox1->Image);
@@ -349,7 +438,7 @@ namespace Swayzecpplab2 {
 	private: System::Void newToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^
 		e) {
 		Delete_list();
-		bmp = gcnew System::Drawing::Bitmap(width, height);
+		bmp = gcnew System::Drawing::Bitmap(width-120, height);
 		pictureBox1->Image = bmp;
 		MyGraphic = System::Drawing::Graphics::FromImage(pictureBox1->Image);
 		MyGraphic->Clear(Color::White);
@@ -372,5 +461,15 @@ namespace Swayzecpplab2 {
 		y1 = e->Y;
 		Draw_ = true;
 	}
-	};
+	private: System::Void changeColorToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (this->colorDialog1->ShowDialog() == System::Windows::Forms::DialogResult::OK) {
+			//this->richTextBox1->SelectionColor = this->colorDialog1->Color;
+			color = this->colorDialog1->Color;
+			MyPen = gcnew Pen(color);
+		}
+	}
+private: System::Void endoToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+
+}
+};
 }
