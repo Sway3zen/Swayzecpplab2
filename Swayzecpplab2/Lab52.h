@@ -1,5 +1,6 @@
 #pragma once
 #include <stdlib.h>
+#include <stack>
 namespace Swayzecpplab2 {
 	using namespace System;
 	using namespace System::ComponentModel;
@@ -13,6 +14,12 @@ namespace Swayzecpplab2 {
 		int x1, y1, x2, y2;
 		struct Drawing_list* next;
 	};
+	struct DrawOperation {
+		int x, y;  
+		int type; 
+		int color;
+	};
+	std::stack<DrawOperation> drawStack;
 	public ref class Lab52 : public System::Windows::Forms::Form
 	{
 	public:
@@ -453,6 +460,22 @@ namespace Swayzecpplab2 {
 				iter = iter->next;
 			}
 		}
+
+		void drawFigure(int x, int y, int type, int color) {
+			DrawOperation op = { x, y, type, color };
+			drawStack.push(op);
+		}
+
+		void undo() {
+			if (!drawStack.empty()) {
+				drawStack.pop();
+			}
+		}
+		void redo() {
+			// TODO: реалізувати
+		}
+
+
 	private: System::Void menuStrip1_ItemClicked(System::Object^ sender,
 		System::Windows::Forms::ToolStripItemClickedEventArgs^ e) {
 	}
