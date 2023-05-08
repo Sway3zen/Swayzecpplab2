@@ -48,6 +48,12 @@ namespace Swayzecpplab2 {
 	private: System::Windows::Forms::RadioButton^ radioButton5;
 	private: System::Windows::Forms::RadioButton^ radioButton6;
 	private: System::Windows::Forms::ColorDialog^ colorDialog1;
+	private: System::Windows::Forms::ToolStripMenuItem^ openToolStripMenuItem;
+	private: System::Windows::Forms::OpenFileDialog^ openFileDialog1;
+	private: System::Windows::Forms::NumericUpDown^ numericUpDown1;
+	private: System::Windows::Forms::Label^ label1;
+	private: System::Windows::Forms::ComboBox^ comboBox1;
+	private: System::Windows::Forms::Label^ label2;
 	private:
 		System::ComponentModel::Container^ components;
 #pragma region Windows Form Designer generated code
@@ -60,6 +66,7 @@ namespace Swayzecpplab2 {
 			this->menuStrip1 = (gcnew System::Windows::Forms::MenuStrip());
 			this->fileToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->newToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->openToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->saveToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->saveAsToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->editToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
@@ -72,8 +79,14 @@ namespace Swayzecpplab2 {
 			this->radioButton5 = (gcnew System::Windows::Forms::RadioButton());
 			this->radioButton6 = (gcnew System::Windows::Forms::RadioButton());
 			this->colorDialog1 = (gcnew System::Windows::Forms::ColorDialog());
+			this->openFileDialog1 = (gcnew System::Windows::Forms::OpenFileDialog());
+			this->numericUpDown1 = (gcnew System::Windows::Forms::NumericUpDown());
+			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
+			this->label2 = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->menuStrip1->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown1))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// pictureBox1
@@ -152,9 +165,9 @@ namespace Swayzecpplab2 {
 			// 
 			// fileToolStripMenuItem
 			// 
-			this->fileToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(3) {
+			this->fileToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(4) {
 				this->newToolStripMenuItem,
-					this->saveToolStripMenuItem, this->saveAsToolStripMenuItem
+					this->openToolStripMenuItem, this->saveToolStripMenuItem, this->saveAsToolStripMenuItem
 			});
 			this->fileToolStripMenuItem->Name = L"fileToolStripMenuItem";
 			this->fileToolStripMenuItem->Size = System::Drawing::Size(37, 20);
@@ -166,6 +179,13 @@ namespace Swayzecpplab2 {
 			this->newToolStripMenuItem->Size = System::Drawing::Size(112, 22);
 			this->newToolStripMenuItem->Text = L"New";
 			this->newToolStripMenuItem->Click += gcnew System::EventHandler(this, &Lab52::newToolStripMenuItem_Click);
+			// 
+			// openToolStripMenuItem
+			// 
+			this->openToolStripMenuItem->Name = L"openToolStripMenuItem";
+			this->openToolStripMenuItem->Size = System::Drawing::Size(112, 22);
+			this->openToolStripMenuItem->Text = L"Open";
+			this->openToolStripMenuItem->Click += gcnew System::EventHandler(this, &Lab52::openToolStripMenuItem_Click);
 			// 
 			// saveToolStripMenuItem
 			// 
@@ -179,6 +199,7 @@ namespace Swayzecpplab2 {
 			this->saveAsToolStripMenuItem->Name = L"saveAsToolStripMenuItem";
 			this->saveAsToolStripMenuItem->Size = System::Drawing::Size(112, 22);
 			this->saveAsToolStripMenuItem->Text = L"Save as";
+			this->saveAsToolStripMenuItem->Click += gcnew System::EventHandler(this, &Lab52::saveAsToolStripMenuItem_Click);
 			// 
 			// editToolStripMenuItem
 			// 
@@ -193,20 +214,20 @@ namespace Swayzecpplab2 {
 			// endoToolStripMenuItem
 			// 
 			this->endoToolStripMenuItem->Name = L"endoToolStripMenuItem";
-			this->endoToolStripMenuItem->Size = System::Drawing::Size(180, 22);
+			this->endoToolStripMenuItem->Size = System::Drawing::Size(145, 22);
 			this->endoToolStripMenuItem->Text = L"Undo";
 			this->endoToolStripMenuItem->Click += gcnew System::EventHandler(this, &Lab52::endoToolStripMenuItem_Click);
 			// 
 			// redoToolStripMenuItem
 			// 
 			this->redoToolStripMenuItem->Name = L"redoToolStripMenuItem";
-			this->redoToolStripMenuItem->Size = System::Drawing::Size(180, 22);
+			this->redoToolStripMenuItem->Size = System::Drawing::Size(145, 22);
 			this->redoToolStripMenuItem->Text = L"Redo";
 			// 
 			// changeColorToolStripMenuItem
 			// 
 			this->changeColorToolStripMenuItem->Name = L"changeColorToolStripMenuItem";
-			this->changeColorToolStripMenuItem->Size = System::Drawing::Size(180, 22);
+			this->changeColorToolStripMenuItem->Size = System::Drawing::Size(145, 22);
 			this->changeColorToolStripMenuItem->Text = L"Change color";
 			this->changeColorToolStripMenuItem->Click += gcnew System::EventHandler(this, &Lab52::changeColorToolStripMenuItem_Click);
 			// 
@@ -262,6 +283,55 @@ namespace Swayzecpplab2 {
 			this->radioButton6->Text = L"Circle";
 			this->radioButton6->UseVisualStyleBackColor = false;
 			// 
+			// openFileDialog1
+			// 
+			this->openFileDialog1->FileName = L"openFileDialog1";
+			// 
+			// numericUpDown1
+			// 
+			this->numericUpDown1->Location = System::Drawing::Point(718, 4);
+			this->numericUpDown1->Name = L"numericUpDown1";
+			this->numericUpDown1->Size = System::Drawing::Size(54, 20);
+			this->numericUpDown1->TabIndex = 9;
+			this->numericUpDown1->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
+			this->numericUpDown1->ValueChanged += gcnew System::EventHandler(this, &Lab52::numericUpDown1_ValueChanged);
+			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->BackColor = System::Drawing::Color::White;
+			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->label1->ForeColor = System::Drawing::Color::Black;
+			this->label1->Location = System::Drawing::Point(619, 6);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(93, 16);
+			this->label1->TabIndex = 10;
+			this->label1->Text = L"Товщина лінії";
+			// 
+			// comboBox1
+			// 
+			this->comboBox1->FormattingEnabled = true;
+			this->comboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(2) { L"Проста", L"Пунктирна" });
+			this->comboBox1->Location = System::Drawing::Point(492, 3);
+			this->comboBox1->Name = L"comboBox1";
+			this->comboBox1->Size = System::Drawing::Size(121, 21);
+			this->comboBox1->TabIndex = 11;
+			this->comboBox1->SelectedIndexChanged += gcnew System::EventHandler(this, &Lab52::comboBox1_SelectedIndexChanged);
+			// 
+			// label2
+			// 
+			this->label2->AutoSize = true;
+			this->label2->BackColor = System::Drawing::Color::White;
+			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->label2->ForeColor = System::Drawing::Color::Black;
+			this->label2->Location = System::Drawing::Point(426, 6);
+			this->label2->Name = L"label2";
+			this->label2->Size = System::Drawing::Size(60, 16);
+			this->label2->TabIndex = 12;
+			this->label2->Text = L"Тип лінії";
+			// 
 			// Lab52
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -269,6 +339,10 @@ namespace Swayzecpplab2 {
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(30)),
 				static_cast<System::Int32>(static_cast<System::Byte>(40)));
 			this->ClientSize = System::Drawing::Size(784, 561);
+			this->Controls->Add(this->label2);
+			this->Controls->Add(this->comboBox1);
+			this->Controls->Add(this->label1);
+			this->Controls->Add(this->numericUpDown1);
 			this->Controls->Add(this->radioButton6);
 			this->Controls->Add(this->radioButton5);
 			this->Controls->Add(this->radioButton4);
@@ -280,12 +354,15 @@ namespace Swayzecpplab2 {
 			this->Controls->Add(this->menuStrip1);
 			this->MainMenuStrip = this->menuStrip1;
 			this->Margin = System::Windows::Forms::Padding(2);
+			this->MaximizeBox = false;
 			this->Name = L"Lab52";
-			this->Text = L"MyForm";
+			this->ShowIcon = false;
+			this->Text = L"Paint";
 			this->Load += gcnew System::EventHandler(this, &Lab52::MyForm_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->menuStrip1->ResumeLayout(false);
 			this->menuStrip1->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown1))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -403,7 +480,13 @@ namespace Swayzecpplab2 {
 		pictureBox1->Invalidate();
 	}
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+		/*Delete_list();
+		MyGraphic->Clear(Color::White);
+		pictureBox1->Invalidate();*/
 		Delete_list();
+		bmp = gcnew System::Drawing::Bitmap(width - 120, height);
+		pictureBox1->Image = bmp;
+		MyGraphic = System::Drawing::Graphics::FromImage(pictureBox1->Image);
 		MyGraphic->Clear(Color::White);
 		pictureBox1->Invalidate();
 	}
@@ -419,21 +502,29 @@ namespace Swayzecpplab2 {
 		MyGraphic = System::Drawing::Graphics::FromImage(pictureBox1->Image);
 		MyGraphic->Clear(Color::White);
 	}
-	private: System::Void saveToolStripMenuItem_Click(System::Object^ sender,
-		System::EventArgs^ e) {
-		saveFileDialog1->OverwritePrompt = true;
-		saveFileDialog1->CheckPathExists = true;
-		saveFileDialog1->Filter =
-			"Bitmap File(*.bmp)|*.bmp|" +
-			"GIF File(*.gif)|*.gif|" +
-			"JPEG File(*.jpg)|*.jpg|" +
-			"TIF File(*.tif)|*.tif|" +
-			"PNG File(*.png)|*.png";
-		saveFileDialog1->ShowHelp = true;
-		if (saveFileDialog1->ShowDialog() ==
-			System::Windows::Forms::DialogResult::OK) {
-			this->pictureBox1->Image->Save(saveFileDialog1->FileName, System::Drawing::Imaging::ImageFormat::Bmp);
+
+		   String^ filePath = "";
+	private: System::Void saveToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+
+		if (filePath->Length > 2) {
+			this->pictureBox1->Image->Save(filePath, System::Drawing::Imaging::ImageFormat::Bmp);
 		}
+		else {
+			saveFileDialog1->OverwritePrompt = true;
+			saveFileDialog1->CheckPathExists = true;
+			saveFileDialog1->Filter =
+				"Bitmap File(*.bmp)|*.bmp|" +
+				"GIF File(*.gif)|*.gif|" +
+				"JPEG File(*.jpg)|*.jpg|" +
+				"TIF File(*.tif)|*.tif|" +
+				"PNG File(*.png)|*.png";
+			saveFileDialog1->ShowHelp = true;
+			if (saveFileDialog1->ShowDialog() ==
+				System::Windows::Forms::DialogResult::OK) {
+				this->pictureBox1->Image->Save(saveFileDialog1->FileName, System::Drawing::Imaging::ImageFormat::Bmp);
+			}
+		}
+		
 	}
 	private: System::Void newToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^
 		e) {
@@ -470,6 +561,46 @@ namespace Swayzecpplab2 {
 	}
 private: System::Void endoToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 
+}
+private: System::Void saveAsToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+	saveFileDialog1->OverwritePrompt = true;
+	saveFileDialog1->CheckPathExists = true;
+	saveFileDialog1->Filter =
+		"Bitmap File(*.bmp)|*.bmp|" +
+		"GIF File(*.gif)|*.gif|" +
+		"JPEG File(*.jpg)|*.jpg|" +
+		"TIF File(*.tif)|*.tif|" +
+		"PNG File(*.png)|*.png";
+	saveFileDialog1->ShowHelp = true;
+	if (saveFileDialog1->ShowDialog() ==
+		System::Windows::Forms::DialogResult::OK) {
+		this->pictureBox1->Image->Save(saveFileDialog1->FileName, System::Drawing::Imaging::ImageFormat::Bmp);
+		filePath = saveFileDialog1->FileName;
+	}
+}
+private: System::Void openToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (openFileDialog1->ShowDialog() == System::Windows::Forms::DialogResult::OK)
+	{
+		Bitmap^ image;
+		image = gcnew Bitmap(openFileDialog1->FileName);
+		pictureBox1->Image = image;
+		pictureBox1->Invalidate();
+	}
+}
+private: System::Void numericUpDown1_ValueChanged(System::Object^ sender, System::EventArgs^ e) {
+	float width = (float)Convert::ToDouble(numericUpDown1->Value);
+	MyPen->Width = width;
+}
+private: System::Void comboBox1_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
+	if (comboBox1->Text == "Проста") {
+		MyPen->DashStyle = System::Drawing::Drawing2D::DashStyle::Solid;
+	}
+	else if (comboBox1->Text == "Пунктирна") {
+		MyPen->DashStyle = System::Drawing::Drawing2D::DashStyle::Dash;
+	}
+	else {
+		MyPen->DashStyle = System::Drawing::Drawing2D::DashStyle::Solid;
+	}
 }
 };
 }
