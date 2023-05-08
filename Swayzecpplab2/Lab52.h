@@ -54,6 +54,7 @@ namespace Swayzecpplab2 {
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::ComboBox^ comboBox1;
 	private: System::Windows::Forms::Label^ label2;
+	private: System::Windows::Forms::RadioButton^ radioButton7;
 	private:
 		System::ComponentModel::Container^ components;
 #pragma region Windows Form Designer generated code
@@ -84,6 +85,7 @@ namespace Swayzecpplab2 {
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
 			this->label2 = (gcnew System::Windows::Forms::Label());
+			this->radioButton7 = (gcnew System::Windows::Forms::RadioButton());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->menuStrip1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown1))->BeginInit();
@@ -332,6 +334,19 @@ namespace Swayzecpplab2 {
 			this->label2->TabIndex = 12;
 			this->label2->Text = L"Òèï ë³í³¿";
 			// 
+			// radioButton7
+			// 
+			this->radioButton7->AutoSize = true;
+			this->radioButton7->BackColor = System::Drawing::Color::Transparent;
+			this->radioButton7->ForeColor = System::Drawing::Color::White;
+			this->radioButton7->Location = System::Drawing::Point(9, 474);
+			this->radioButton7->Margin = System::Windows::Forms::Padding(2);
+			this->radioButton7->Name = L"radioButton7";
+			this->radioButton7->Size = System::Drawing::Size(52, 17);
+			this->radioButton7->TabIndex = 13;
+			this->radioButton7->Text = L"Brush";
+			this->radioButton7->UseVisualStyleBackColor = false;
+			// 
 			// Lab52
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -339,6 +354,7 @@ namespace Swayzecpplab2 {
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(30)),
 				static_cast<System::Int32>(static_cast<System::Byte>(40)));
 			this->ClientSize = System::Drawing::Size(784, 561);
+			this->Controls->Add(this->radioButton7);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->comboBox1);
 			this->Controls->Add(this->label1);
@@ -475,6 +491,10 @@ namespace Swayzecpplab2 {
 		{
 			MyGraphic->DrawEllipse(MyPen, x1, y1, e->X - x1, e->X -
 				x1); CreateNode(1, x1, y1, e->X - x1, e->X - x1);
+		}
+		if (radioButton7->Checked) {
+			System::Drawing::Brush^ linearGradientBrush_ = gcnew System::Drawing::Drawing2D::LinearGradientBrush(ClientRectangle, Color::Red,Color::White, 45);
+			MyGraphic->FillEllipse(linearGradientBrush_, x1, y1, e->X-x1, e->Y-y1);
 		}
 
 		pictureBox1->Invalidate();
