@@ -1,6 +1,8 @@
 #pragma once
 #include <stdlib.h>
-#include <stack>
+#include <stdio.h>
+#include <direct.h>
+
 namespace Swayzecpplab2 {
 	using namespace System;
 	using namespace System::ComponentModel;
@@ -8,18 +10,13 @@ namespace Swayzecpplab2 {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+	using namespace System::IO;
 	struct Drawing_list
 	{
 		int figure;
 		int x1, y1, x2, y2;
 		struct Drawing_list* next;
 	};
-	struct DrawOperation {
-		int x, y;  
-		int type; 
-		int color;
-	};
-	std::stack<DrawOperation> drawStack;
 	public ref class Lab52 : public System::Windows::Forms::Form
 	{
 	public:
@@ -223,20 +220,21 @@ namespace Swayzecpplab2 {
 			// endoToolStripMenuItem
 			// 
 			this->endoToolStripMenuItem->Name = L"endoToolStripMenuItem";
-			this->endoToolStripMenuItem->Size = System::Drawing::Size(145, 22);
+			this->endoToolStripMenuItem->Size = System::Drawing::Size(180, 22);
 			this->endoToolStripMenuItem->Text = L"Undo";
 			this->endoToolStripMenuItem->Click += gcnew System::EventHandler(this, &Lab52::endoToolStripMenuItem_Click);
 			// 
 			// redoToolStripMenuItem
 			// 
 			this->redoToolStripMenuItem->Name = L"redoToolStripMenuItem";
-			this->redoToolStripMenuItem->Size = System::Drawing::Size(145, 22);
+			this->redoToolStripMenuItem->Size = System::Drawing::Size(180, 22);
 			this->redoToolStripMenuItem->Text = L"Redo";
+			this->redoToolStripMenuItem->Click += gcnew System::EventHandler(this, &Lab52::redoToolStripMenuItem_Click);
 			// 
 			// changeColorToolStripMenuItem
 			// 
 			this->changeColorToolStripMenuItem->Name = L"changeColorToolStripMenuItem";
-			this->changeColorToolStripMenuItem->Size = System::Drawing::Size(145, 22);
+			this->changeColorToolStripMenuItem->Size = System::Drawing::Size(180, 22);
 			this->changeColorToolStripMenuItem->Text = L"Change color";
 			this->changeColorToolStripMenuItem->Click += gcnew System::EventHandler(this, &Lab52::changeColorToolStripMenuItem_Click);
 			// 
@@ -460,22 +458,6 @@ namespace Swayzecpplab2 {
 				iter = iter->next;
 			}
 		}
-
-		void drawFigure(int x, int y, int type, int color) {
-			DrawOperation op = { x, y, type, color };
-			drawStack.push(op);
-		}
-
-		void undo() {
-			if (!drawStack.empty()) {
-				drawStack.pop();
-			}
-		}
-		void redo() {
-			// TODO: реалізувати
-		}
-
-
 	private: System::Void menuStrip1_ItemClicked(System::Object^ sender,
 		System::Windows::Forms::ToolStripItemClickedEventArgs^ e) {
 	}
@@ -489,31 +471,37 @@ namespace Swayzecpplab2 {
 		if (radioButton1->Checked)
 		{
 			MyGraphic->DrawLine(MyPen, x1, y1, e->X, e->Y); CreateNode(0, x1, y1, e->X, e->Y);
+			CreateTempUndo();
 		}
 		if (radioButton2->Checked)
 		{
 			MyGraphic->DrawEllipse(MyPen, x1, y1, e->X - x1, e->Y -
 				y1); CreateNode(1, x1, y1, e->X - x1, e->Y - y1);
+			CreateTempUndo();
 		}
 		if (radioButton3->Checked)
 		{
 			MyGraphic->DrawRectangle(MyPen, x1, y1, e->X - x1, e->X - abs(x1)); CreateNode(1, x1, y1, e->X - x1, e->X - x1);
+			CreateTempUndo();
 		}
 		if (radioButton4->Checked)
 		{
 			array<Point>^ points = { Point(x1,e->Y), Point(e->X, e->Y), Point((x1 + e->X) / 2,y1) };
 			MyGraphic->DrawPolygon(MyPen, points);
+			CreateTempUndo();
 		}
 		if (radioButton5->Checked)
 		{
 			MyGraphic->DrawRectangle(MyPen, x1, y1, e->X - x1, e->Y - y1); 
 			CreateNode(1, x1, y1, e->X - x1, e->Y - y1);
+			CreateTempUndo();
 		}
 
 		if (radioButton6->Checked)
 		{
 			MyGraphic->DrawEllipse(MyPen, x1, y1, e->X - x1, e->X -
 				x1); CreateNode(1, x1, y1, e->X - x1, e->X - x1);
+			CreateTempUndo();
 		}
 		if (radioButton7->Checked) {
 			System::Drawing::Brush^ linearGradientBrush_ = gcnew System::Drawing::Drawing2D::LinearGradientBrush(ClientRectangle, Color::Red,Color::White, 45);
@@ -533,7 +521,15 @@ namespace Swayzecpplab2 {
 		MyGraphic->Clear(Color::White);
 		pictureBox1->Invalidate();
 	}
+
+		   int count = 1;
 	private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
+		char* temp_path = getenv("TEMP");
+		char path[255];
+		sprintf(path, "%s\\Lab5_Temp_Images\\", temp_path);
+		tempPath = gcnew String(path);
+		Directory::Delete(tempPath, true);
+
 		MyPen = gcnew Pen(color);
 		//this->BackColor = System::Drawing::Color::LightGray;
 		height = 600;
@@ -546,7 +542,51 @@ namespace Swayzecpplab2 {
 		MyGraphic->Clear(Color::White);
 	}
 
+		   System::Void CreateTempUndo() {
+			   char* temp_path = getenv("TEMP");
+			   char path[255];
+			   sprintf(path, "%s\\Lab5_Temp_Images\\", temp_path);
+			   tempPath = gcnew String(path);
+			   int result = mkdir(path);
+			   tempPath = tempPath + count + "Undo.bmp";
+			   this->pictureBox1->Image->Save(tempPath, System::Drawing::Imaging::ImageFormat::Bmp);
+			   count++;
+		   }
+
+		   System::Void GetUndo() {
+			   if (count <= 0) {
+				   MessageBox::Show("Net.");
+			   }
+			   else {
+				   char* temp_path = getenv("TEMP");
+				   char path[255];
+				   sprintf(path, "%s\\Lab5_Temp_Images\\", temp_path);
+				   tempPath = gcnew String(path);
+
+				   Bitmap^ image;
+				   image = gcnew Bitmap(tempPath + (count - 1) + "Undo.bmp");
+				   count -= 1;
+				   pictureBox1->Image = image;
+				   pictureBox1->Invalidate();
+			   }
+			   
+		   }
+
+		   System::Void CreateTempRedo() {
+			   char* temp_path = getenv("TEMP");
+			   char path[255];
+			   sprintf(path, "%s\\Lab5_Temp_Images\\", temp_path);
+			   tempPath = gcnew String(path);
+
+			   Bitmap^ image;
+			   image = gcnew Bitmap(tempPath+(count+1)+"Undo.bmp");
+			   count++;
+			   pictureBox1->Image = image;
+			   pictureBox1->Invalidate();
+		   }
+
 		   String^ filePath = "";
+		   String^ tempPath = "";
 	private: System::Void saveToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 
 		if (filePath->Length > 2) {
@@ -603,7 +643,7 @@ namespace Swayzecpplab2 {
 		}
 	}
 private: System::Void endoToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
-
+	GetUndo();
 }
 private: System::Void saveAsToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 	saveFileDialog1->OverwritePrompt = true;
@@ -644,6 +684,9 @@ private: System::Void comboBox1_SelectedIndexChanged(System::Object^ sender, Sys
 	else {
 		MyPen->DashStyle = System::Drawing::Drawing2D::DashStyle::Solid;
 	}
+}
+private: System::Void redoToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+	CreateTempRedo();
 }
 };
 }
