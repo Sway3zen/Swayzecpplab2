@@ -59,6 +59,10 @@ namespace Swayzecpplab2 {
 	private: System::Windows::Forms::ComboBox^ comboBox1;
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::RadioButton^ radioButton7;
+	private: System::Windows::Forms::RadioButton^ radioButton8;
+	private: System::Windows::Forms::RadioButton^ radioButton9;
+	private: System::Windows::Forms::RadioButton^ radioButton10;
+	private: System::Windows::Forms::RadioButton^ radioButton11;
 	private:
 		System::ComponentModel::Container^ components;
 #pragma region Windows Form Designer generated code
@@ -90,6 +94,10 @@ namespace Swayzecpplab2 {
 			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->radioButton7 = (gcnew System::Windows::Forms::RadioButton());
+			this->radioButton8 = (gcnew System::Windows::Forms::RadioButton());
+			this->radioButton9 = (gcnew System::Windows::Forms::RadioButton());
+			this->radioButton10 = (gcnew System::Windows::Forms::RadioButton());
+			this->radioButton11 = (gcnew System::Windows::Forms::RadioButton());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->menuStrip1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown1))->BeginInit();
@@ -220,21 +228,21 @@ namespace Swayzecpplab2 {
 			// endoToolStripMenuItem
 			// 
 			this->endoToolStripMenuItem->Name = L"endoToolStripMenuItem";
-			this->endoToolStripMenuItem->Size = System::Drawing::Size(180, 22);
+			this->endoToolStripMenuItem->Size = System::Drawing::Size(145, 22);
 			this->endoToolStripMenuItem->Text = L"Undo";
 			this->endoToolStripMenuItem->Click += gcnew System::EventHandler(this, &Lab52::endoToolStripMenuItem_Click);
 			// 
 			// redoToolStripMenuItem
 			// 
 			this->redoToolStripMenuItem->Name = L"redoToolStripMenuItem";
-			this->redoToolStripMenuItem->Size = System::Drawing::Size(180, 22);
+			this->redoToolStripMenuItem->Size = System::Drawing::Size(145, 22);
 			this->redoToolStripMenuItem->Text = L"Redo";
 			this->redoToolStripMenuItem->Click += gcnew System::EventHandler(this, &Lab52::redoToolStripMenuItem_Click);
 			// 
 			// changeColorToolStripMenuItem
 			// 
 			this->changeColorToolStripMenuItem->Name = L"changeColorToolStripMenuItem";
-			this->changeColorToolStripMenuItem->Size = System::Drawing::Size(180, 22);
+			this->changeColorToolStripMenuItem->Size = System::Drawing::Size(145, 22);
 			this->changeColorToolStripMenuItem->Text = L"Change color";
 			this->changeColorToolStripMenuItem->Click += gcnew System::EventHandler(this, &Lab52::changeColorToolStripMenuItem_Click);
 			// 
@@ -324,6 +332,7 @@ namespace Swayzecpplab2 {
 			this->comboBox1->Name = L"comboBox1";
 			this->comboBox1->Size = System::Drawing::Size(121, 21);
 			this->comboBox1->TabIndex = 11;
+			this->comboBox1->Text = L"Проста";
 			this->comboBox1->SelectedIndexChanged += gcnew System::EventHandler(this, &Lab52::comboBox1_SelectedIndexChanged);
 			// 
 			// label2
@@ -347,10 +356,63 @@ namespace Swayzecpplab2 {
 			this->radioButton7->Location = System::Drawing::Point(9, 474);
 			this->radioButton7->Margin = System::Windows::Forms::Padding(2);
 			this->radioButton7->Name = L"radioButton7";
-			this->radioButton7->Size = System::Drawing::Size(52, 17);
+			this->radioButton7->Size = System::Drawing::Size(49, 17);
 			this->radioButton7->TabIndex = 13;
-			this->radioButton7->Text = L"Brush";
+			this->radioButton7->Text = L"Ellips";
 			this->radioButton7->UseVisualStyleBackColor = false;
+			this->radioButton7->CheckedChanged += gcnew System::EventHandler(this, &Lab52::radioButton7_CheckedChanged);
+			// 
+			// radioButton8
+			// 
+			this->radioButton8->AutoSize = true;
+			this->radioButton8->BackColor = System::Drawing::Color::Transparent;
+			this->radioButton8->ForeColor = System::Drawing::Color::White;
+			this->radioButton8->Location = System::Drawing::Point(9, 453);
+			this->radioButton8->Margin = System::Windows::Forms::Padding(2);
+			this->radioButton8->Name = L"radioButton8";
+			this->radioButton8->Size = System::Drawing::Size(74, 17);
+			this->radioButton8->TabIndex = 14;
+			this->radioButton8->Text = L"Rectangle";
+			this->radioButton8->UseVisualStyleBackColor = false;
+			// 
+			// radioButton9
+			// 
+			this->radioButton9->AutoSize = true;
+			this->radioButton9->BackColor = System::Drawing::Color::Transparent;
+			this->radioButton9->ForeColor = System::Drawing::Color::White;
+			this->radioButton9->Location = System::Drawing::Point(9, 432);
+			this->radioButton9->Margin = System::Windows::Forms::Padding(2);
+			this->radioButton9->Name = L"radioButton9";
+			this->radioButton9->Size = System::Drawing::Size(59, 17);
+			this->radioButton9->TabIndex = 15;
+			this->radioButton9->Text = L"Square";
+			this->radioButton9->UseVisualStyleBackColor = false;
+			// 
+			// radioButton10
+			// 
+			this->radioButton10->AutoSize = true;
+			this->radioButton10->BackColor = System::Drawing::Color::Transparent;
+			this->radioButton10->ForeColor = System::Drawing::Color::White;
+			this->radioButton10->Location = System::Drawing::Point(9, 411);
+			this->radioButton10->Margin = System::Windows::Forms::Padding(2);
+			this->radioButton10->Name = L"radioButton10";
+			this->radioButton10->Size = System::Drawing::Size(63, 17);
+			this->radioButton10->TabIndex = 16;
+			this->radioButton10->Text = L"Triangle";
+			this->radioButton10->UseVisualStyleBackColor = false;
+			// 
+			// radioButton11
+			// 
+			this->radioButton11->AutoSize = true;
+			this->radioButton11->BackColor = System::Drawing::Color::Transparent;
+			this->radioButton11->ForeColor = System::Drawing::Color::White;
+			this->radioButton11->Location = System::Drawing::Point(9, 390);
+			this->radioButton11->Margin = System::Windows::Forms::Padding(2);
+			this->radioButton11->Name = L"radioButton11";
+			this->radioButton11->Size = System::Drawing::Size(51, 17);
+			this->radioButton11->TabIndex = 17;
+			this->radioButton11->Text = L"Circle";
+			this->radioButton11->UseVisualStyleBackColor = false;
 			// 
 			// Lab52
 			// 
@@ -359,6 +421,10 @@ namespace Swayzecpplab2 {
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(30)),
 				static_cast<System::Int32>(static_cast<System::Byte>(40)));
 			this->ClientSize = System::Drawing::Size(784, 561);
+			this->Controls->Add(this->radioButton11);
+			this->Controls->Add(this->radioButton10);
+			this->Controls->Add(this->radioButton9);
+			this->Controls->Add(this->radioButton8);
 			this->Controls->Add(this->radioButton7);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->comboBox1);
@@ -506,6 +572,28 @@ namespace Swayzecpplab2 {
 		if (radioButton7->Checked) {
 			System::Drawing::Brush^ linearGradientBrush_ = gcnew System::Drawing::Drawing2D::LinearGradientBrush(ClientRectangle, Color::Red,Color::White, 45);
 			MyGraphic->FillEllipse(linearGradientBrush_, x1, y1, e->X-x1, e->Y-y1);
+			CreateTempUndo();
+		}
+		if (radioButton8->Checked) {
+			System::Drawing::Brush^ linearGradientBrush_ = gcnew System::Drawing::Drawing2D::LinearGradientBrush(ClientRectangle, Color::Red, Color::White, 45);
+			MyGraphic->FillRectangle(linearGradientBrush_, x1, y1, e->X - x1, e->Y - y1);
+			CreateTempUndo();
+		}
+		if (radioButton9->Checked) {
+			System::Drawing::Brush^ linearGradientBrush_ = gcnew System::Drawing::Drawing2D::LinearGradientBrush(ClientRectangle, Color::Red, Color::White, 45);
+			MyGraphic->FillRectangle(linearGradientBrush_, x1, y1, e->X - x1, e->X - x1);
+			CreateTempUndo();
+		}
+		if (radioButton10->Checked) {
+			array<Point>^ points = { Point(x1,e->Y), Point(e->X, e->Y), Point((x1 + e->X) / 2,y1) };
+			System::Drawing::Brush^ linearGradientBrush_ = gcnew System::Drawing::Drawing2D::LinearGradientBrush(ClientRectangle, Color::Red, Color::White, 45);
+			MyGraphic->FillPolygon(linearGradientBrush_, points);
+			CreateTempUndo();
+		}
+		if (radioButton11->Checked) {
+			System::Drawing::Brush^ linearGradientBrush_ = gcnew System::Drawing::Drawing2D::LinearGradientBrush(ClientRectangle, Color::Red, Color::White, 45);
+			MyGraphic->FillEllipse(linearGradientBrush_, x1, y1, e->X - x1, e->X - x1);
+			CreateTempUndo();
 		}
 
 		pictureBox1->Invalidate();
@@ -687,6 +775,8 @@ private: System::Void comboBox1_SelectedIndexChanged(System::Object^ sender, Sys
 }
 private: System::Void redoToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 	CreateTempRedo();
+}
+private: System::Void radioButton7_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }
