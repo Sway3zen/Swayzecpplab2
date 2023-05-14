@@ -110,9 +110,9 @@ namespace Swayzecpplab2 {
 			this->Column10 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->dataGridView2 = (gcnew System::Windows::Forms::DataGridView());
+			this->Column11 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->listBox2 = (gcnew System::Windows::Forms::ListBox());
 			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->Column11 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->BeginInit();
 			this->SuspendLayout();
@@ -141,6 +141,7 @@ namespace Swayzecpplab2 {
 			this->listBox1->Name = L"listBox1";
 			this->listBox1->Size = System::Drawing::Size(120, 95);
 			this->listBox1->TabIndex = 2;
+			this->listBox1->Visible = false;
 			// 
 			// dataGridView1
 			// 
@@ -153,6 +154,7 @@ namespace Swayzecpplab2 {
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->Size = System::Drawing::Size(240, 150);
 			this->dataGridView1->TabIndex = 3;
+			this->dataGridView1->Visible = false;
 			// 
 			// Column1
 			// 
@@ -223,6 +225,11 @@ namespace Swayzecpplab2 {
 			this->dataGridView2->Size = System::Drawing::Size(240, 150);
 			this->dataGridView2->TabIndex = 6;
 			// 
+			// Column11
+			// 
+			this->Column11->HeaderText = L"Column11";
+			this->Column11->Name = L"Column11";
+			// 
 			// listBox2
 			// 
 			this->listBox2->FormattingEnabled = true;
@@ -239,11 +246,6 @@ namespace Swayzecpplab2 {
 			this->label1->Size = System::Drawing::Size(35, 13);
 			this->label1->TabIndex = 7;
 			this->label1->Text = L"label1";
-			// 
-			// Column11
-			// 
-			this->Column11->HeaderText = L"Column11";
-			this->Column11->Name = L"Column11";
 			// 
 			// Lab42
 			// 
