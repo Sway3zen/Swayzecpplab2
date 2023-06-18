@@ -1,5 +1,15 @@
-﻿  Lab41.cpp
-  Lab42.cpp
-  Generating Code...
+﻿  Lab52.cpp
+C:\Users\Swayze\source\repos\Swayzecpplab2\Swayzecpplab2\Lab52.h(615,21): warning C4996: 'getenv': This function or variable may be unsafe. Consider using _dupenv_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\Swayze\source\repos\Swayzecpplab2\Swayzecpplab2\Lab52.h(617,3): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\Swayze\source\repos\Swayzecpplab2\Swayzecpplab2\Lab52.h(620,8): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\Swayze\source\repos\Swayzecpplab2\Swayzecpplab2\Lab52.h(622,20): warning C4996: 'mkdir': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _mkdir. See online help for details.
+C:\Users\Swayze\source\repos\Swayzecpplab2\Swayzecpplab2\Lab52.h(626,20): warning C4996: 'mkdir': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _mkdir. See online help for details.
+C:\Users\Swayze\source\repos\Swayzecpplab2\Swayzecpplab2\Lab52.h(642,25): warning C4996: 'getenv': This function or variable may be unsafe. Consider using _dupenv_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\Swayze\source\repos\Swayzecpplab2\Swayzecpplab2\Lab52.h(644,7): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\Swayze\source\repos\Swayzecpplab2\Swayzecpplab2\Lab52.h(646,20): warning C4996: 'mkdir': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _mkdir. See online help for details.
+C:\Users\Swayze\source\repos\Swayzecpplab2\Swayzecpplab2\Lab52.h(657,26): warning C4996: 'getenv': This function or variable may be unsafe. Consider using _dupenv_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\Swayze\source\repos\Swayzecpplab2\Swayzecpplab2\Lab52.h(659,8): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\Swayze\source\repos\Swayzecpplab2\Swayzecpplab2\Lab52.h(672,25): warning C4996: 'getenv': This function or variable may be unsafe. Consider using _dupenv_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\Swayze\source\repos\Swayzecpplab2\Swayzecpplab2\Lab52.h(674,7): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   Lab31.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
   Swayzecpplab2.vcxproj -> C:\Users\Swayze\Source\Repos\Swayzecpplab2\x64\Release\Swayzecpplab2.exe

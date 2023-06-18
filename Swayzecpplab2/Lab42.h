@@ -273,17 +273,13 @@ namespace Swayzecpplab2 {
 
 		System::Void comboBox1_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e)
 		{
-			// При зміні вибраного елемента в ComboBox викликається ця функція
 
-			// Очищуємо ListBox або DataGridView
 			if (comboBox1->SelectedIndex == 0) {
 				listBox1->Items->Clear();
 			}
 			else {
 				dataGridView1->Rows->Clear();
 			}
-
-			// Виводимо відповідний контрол на формі
 			if (comboBox1->SelectedIndex == 0) {
 				listBox1->Visible = true;
 				dataGridView1->Visible = false;
@@ -293,13 +289,11 @@ namespace Swayzecpplab2 {
 				dataGridView1->Visible = true;
 			}
 
-			// Викликаємо функцію, яка виводить масив
-			//DisplayArray();
+
 		}
 
 		private: System::Void checkedListBox1_ItemCheck(System::Object^ sender, System::Windows::Forms::ItemCheckEventArgs^ e) {
-			// Handle item check events in CheckedListBox
-			// When an item is checked or unchecked, update the selected items in ListBox or DataGridView
+
 			array<int>^ selectedItems = gcnew array<int>(checkedListBox1->CheckedItems->Count);
 			for (int i = 0; i < checkedListBox1->CheckedItems->Count; i++) {
 				selectedItems[i] = safe_cast<int>(checkedListBox1->CheckedItems[i]);

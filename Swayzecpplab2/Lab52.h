@@ -616,7 +616,15 @@ namespace Swayzecpplab2 {
 		char path[255];
 		sprintf(path, "%s\\Lab5_Temp_Images\\", temp_path);
 		tempPath = gcnew String(path);
-		Directory::Delete(tempPath, true);
+		FILE* fp;
+		fp = fopen(path, "r");
+		if (fp == 0) {
+			int createdir = mkdir(path);
+		}
+		else {
+			Directory::Delete(tempPath, true);
+			int createdir = mkdir(path);
+		}
 
 		MyPen = gcnew Pen(color);
 		//this->BackColor = System::Drawing::Color::LightGray;

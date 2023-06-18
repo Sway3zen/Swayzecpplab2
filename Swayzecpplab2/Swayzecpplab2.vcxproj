@@ -123,6 +123,7 @@
     <ClCompile Include="Lab33.cpp" />
     <ClCompile Include="Lab41.cpp" />
     <ClCompile Include="Lab42.cpp" />
+    <ClCompile Include="Lab423.cpp" />
     <ClCompile Include="Lab5.cpp" />
     <ClCompile Include="Lab52.cpp" />
     <ClCompile Include="MyForm.cpp" />
@@ -138,6 +139,9 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Lab42.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Lab423.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Lab5.h">
@@ -165,6 +169,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Lab42.resx">
       <DependentUpon>Lab42.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lab423.resx">
+      <DependentUpon>Lab423.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Lab5.resx">
       <DependentUpon>Lab5.h</DependentUpon>

@@ -9,3 +9,4 @@ C:\Users\Swayze\source\repos\Swayzecpplab2\Swayzecpplab2\x64\Release\Swayzecppla
 C:\Users\Swayze\source\repos\Swayzecpplab2\Swayzecpplab2\x64\Release\Swayzecpplab2.Lab42.resources
 C:\Users\Swayze\source\repos\Swayzecpplab2\Swayzecpplab2\x64\Release\Swayzecpplab2.Lab5.resources
 C:\Users\Swayze\source\repos\Swayzecpplab2\Swayzecpplab2\x64\Release\Swayzecpplab2.Lab52.resources
+C:\Users\Swayze\source\repos\Swayzecpplab2\Swayzecpplab2\x64\Release\Swayzecpplab2.Lab423.resources
